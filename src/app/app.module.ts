@@ -9,6 +9,11 @@ import { FooterComponent } from './footer/footer.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { Error404Component } from './pages/error404/error404.component';
+import { LoginComponent } from './pages/login/login.component';
+import {AuthGuard} from './services/auth/auth.guard';
 
 
 @NgModule({
@@ -16,7 +21,11 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     HeaderComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    AboutComponent,
+    Error404Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,7 @@ import { AppRoutingModule } from './app-routing.module';
     RouterModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
